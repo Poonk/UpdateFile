@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/csv"
-	"fmt"
 	"io"
 	"os"
 
@@ -98,7 +97,8 @@ func updateFile() {
 	// }
 
 	newFileName := "resultFile.csv"
-	wfs, err := os.OpenFile(newFileName, os.O_RDWR|os.O_CREATE, 0666)
+	// wfs, err := os.OpenFile(newFileName, os.O_RDWR|os.O_CREATE, 0666)
+	wfs, err := os.Create(newFileName)
 	if err != nil {
 		logs.Error("can not create file, err is %+v", err)
 	}
@@ -235,10 +235,10 @@ func main() {
 	// 	}
 	// }
 
-	// updateFile()
-	for {
-		var a, b int
-		fmt.Scanln(&a, &b)
-		logs.Debug(a, " + ", b, " = ", a+b)
-	}
+	updateFile()
+	// for {
+	// 	var a, b int
+	// 	fmt.Scanln(&a, &b)
+	// 	logs.Debug(a, " + ", b, " = ", a+b)
+	// }
 }
