@@ -14,8 +14,16 @@ type Server struct {
 	SQL      string
 }
 
+type Taos struct {
+	Database string
+	Table    string
+	Stable   string
+	Word     string
+}
+
 type Config struct {
 	Server *Server
+	Taos   *Taos
 }
 
 var (
@@ -24,7 +32,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&confPath, "conf", "test.toml", "config path")
+	flag.StringVar(&confPath, "conf", "push.toml", "config path")
 }
 
 func Init() (err error) {
