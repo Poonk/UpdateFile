@@ -1,0 +1,17 @@
+ver = "1.0.0"
+
+[server]
+username = "root"
+passwd = "taosdata"
+ip = "192.168.1.119:0"
+proto = "@/tcp"
+sql = "taosSql"
+
+[taos]
+database = "globaldb"
+table = "h4_5103_spx"   #子表
+stable = "stock_4h"     #超级表
+condition = ""
+fileName = "FileName"   #指定文件名字
+marketType = "5102"
+symbol = "fchi"

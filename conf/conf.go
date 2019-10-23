@@ -15,10 +15,13 @@ type Server struct {
 }
 
 type Taos struct {
-	Database string
-	Table    string
-	Stable   string
-	Word     string
+	Database   string
+	Table      string
+	Stable     string
+	Condition  string
+	FileName   string
+	MarketType string
+	Symbol     string
 }
 
 type Config struct {
@@ -32,7 +35,7 @@ var (
 )
 
 func init() {
-	flag.StringVar(&confPath, "conf", "push.toml", "config path")
+	flag.StringVar(&confPath, "conf", "../repairData.toml", "config path")
 }
 
 func Init() (err error) {
