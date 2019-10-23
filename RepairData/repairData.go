@@ -1,11 +1,13 @@
 package main
 
 import (
-	"DataRepairTool/Server"
-	"DataRepairTool/conf"
 	"database/sql"
+	"flag"
 	"fmt"
-	_ "taosSql"
+
+	"bailun.com/CT4_quote_server/DataRepairTool/Server"
+	"bailun.com/CT4_quote_server/DataRepairTool/conf"
+	_ "bailun.com/CT4_quote_server/lib/taosSql"
 
 	"github.com/astaxie/beego/logs"
 )
@@ -14,6 +16,7 @@ func main() {
 	logs.EnableFuncCallDepth(true)
 	logs.SetLogFuncCallDepth(3)
 
+	flag.Parse()
 	if err := conf.Init(); err != nil {
 		logs.Error(err)
 		return
