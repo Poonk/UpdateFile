@@ -1,6 +1,8 @@
 package conf
 
 import (
+	// "flag"
+
 	"flag"
 
 	"github.com/BurntSushi/toml"
@@ -39,6 +41,8 @@ func init() {
 }
 
 func Init() (err error) {
+	// flag.StringVar(&confPath, "conf", "repairData.toml", "config path")
+	// confPath = "../repairData.toml"
 	_, err = toml.DecodeFile(confPath, &Conf)
 	return
 }

@@ -1,7 +1,6 @@
 package Server
 
 import (
-	"DataRepairTool/conf"
 	"database/sql"
 	"encoding/csv"
 	"fmt"
@@ -9,6 +8,8 @@ import (
 	"os"
 	"strconv"
 	"time"
+
+	"bailun.com/CT4_quote_server/DataRepairTool/conf"
 
 	"github.com/astaxie/beego/logs"
 )
